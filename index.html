@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Tetris</title>
+    <style>
+      button:hover {
+        background-color: #45088b !important;
+      }
+      button:active {
+        background-color: #9969d0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="tetris2.gif" alt="Logo" width="70" height="30" class="d-inline-block align-text-top">
+            ¡Juguemos al tetris!
+          </a>
+        </div>
+      </nav>
+  
+    <canvas id="canvas" width="400" height="800"> </canvas>
+    <canvas
+      id="nextShapeCanvas"
+      width="200"
+      height="200"
+      style="position: absolute; top: 10"
+    >
+    </canvas>
+
+    <canvas
+      id="scoreCanvas"
+      width="200"
+      height="200"
+      style="position: absolute; top: 220"
+    >
+    </canvas>
+
+    <button
+      style="
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background-color: rgb(233, 129, 129);
+        border: 0px;
+      "
+      onClick="resetVars()"
+    >
+      <svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%">
+        <use class="ytp-svg-shadow" xlink:href="#ytp-id-54"></use>
+        <path
+          class="ytp-svg-fill"
+          fill="#ffffff"
+          d="M 18,11 V 7 l -5,5 5,5 v -4 c 3.3,0 6,2.7 6,6 0,3.3 -2.7,6 -6,6 -3.3,0 -6,-2.7 -6,-6 h -2 c 0,4.4 3.6,8 8,8 4.4,0 8,-3.6 8,-8 0,-4.4 -3.6,-8 -8,-8 z"
+          id="ytp-id-54"
+        ></path>
+      </svg>
+    </button>
+    <img id="image" src="rotations.png" style="display: none" />
+
+    <script src="tetris.js"></script>
+    <br><br><br>
+    <h1>¿CÓMO JUGAR?</h1>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Objetivo del juego
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>
+                Rellena y gana: Llena filas con bloques para ganar puntos. ¡Cuando llenes una fila, DESAPARECERA!
+              </strong>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Mueve y rota
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>
+                Usa las flechas --derecha e izquierda-- para que tus fichas se pocisionen
+              </strong> 
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Evita el tope
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>
+                No dejes que los bloques alcancen la parte superior de la pantalla. Si se acumulan, el juego termina.
+                <br><br>
+                Ah, y tienes una flecha justo a la derecha del juego para volver a empezar.
+              </strong> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
